@@ -1,0 +1,36 @@
+import React from "react";
+import Image from "next/image";
+import iconClose from "../assets/shared/icon-close.svg";
+import Link from "next/link";
+
+interface MobileMenuProps {
+  items: string[];
+  handleCloseMenu: () => void;
+}
+
+const MobileMenu: React.FC<MobileMenuProps> = ({ items, handleCloseMenu }) => {
+  return (
+    <div className="absolute inset-y-0 right-0 h-full w-64 bg-transparent p-6 backdrop-blur-lg">
+      <Image
+        src={iconClose}
+        alt="icon-close"
+        className="absolute right-6"
+        width={19}
+        height={19}
+        onClick={handleCloseMenu}
+      />
+
+      <div className="mt-28">
+        {items.map((item, i) => (
+          <Link href={item} key={i} legacyBehavior>
+            <a className="nav-text mb-8 block uppercase text-white">
+              <span className="font-bold">0{i}</span> {item}
+            </a>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default MobileMenu;

@@ -2,26 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.subheading-1 {
+  @apply font-bellefair;
+  font-size: 28px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.subheading-2 {
+  @apply font-barlowCondensed;
+  font-size: 14px;
+  letter-spacing: 2.35px;
+}
+
+.nav-text {
+  @apply font-barlowCondensed;
+  font-size: 16px;
+  letter-spacing: 2.7px;
+}
+
+@layer base {
+  h1 {
+    @apply font-bellefair;
+    font-size: 80px;
   }
-}
+  @media screen(md) {
+    h1 {
+      font-size: 150px;
+    }
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  h2 {
+    @apply font-bellefair;
+    font-size: 100px;
+  }
+
+  h3 {
+    @apply font-bellefair;
+    font-size: 56px;
+  }
+
+  h4 {
+    @apply font-bellefair;
+    font-size: 32px;
+  }
+
+  h5 {
+    @apply font-barlowCondensed;
+    font-size: 28px;
+    letter-spacing: 4.75px;
+  }
+
+  p {
+    @apply font-barlow;
+    font-size: 18px;
+  }
 }

@@ -7,9 +7,9 @@ const Page: NextPageWithLayout = () => {
   return (
     <div className="text-center lg:mt-40 lg:flex lg:flex-row lg:items-end lg:justify-around lg:text-left">
       <div className="flex h-[276px] flex-col justify-between md:h-[334px] lg:h-auto lg:w-[450px]">
-        <div className="nav-text mt-6 uppercase text-light-blue md:mt-20 md:text-[20px] lg:text-[28px] lg:tracking-[4.72px]">
+        <h5 className="nav-text mt-6 uppercase text-light-blue md:mt-20 md:text-[20px] lg:text-[28px] lg:tracking-[4.72px]">
           So, you want to travel to
-        </div>
+        </h5>
 
         <h1 className="uppercase text-white">space</h1>
 

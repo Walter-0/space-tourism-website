@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Bellefair, Barlow, Barlow_Condensed } from "next/font/google";
 import { Navbar } from "./Navbar";
+import { useRouter } from "next/router";
 
 const bellefair = Bellefair({
   weight: "400",
@@ -43,8 +44,10 @@ const useCheckMobileScreen = () => {
 };
 
 export default function Layout({ children }) {
+  const router = useRouter();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const isMobile = useCheckMobileScreen();
+  const page = router.pathname === "/" ? "home" : router.pathname.slice(1);
 
   const handleOpenMenu = () => {
     setMenuIsOpen(() => true);
@@ -62,7 +65,7 @@ export default function Layout({ children }) {
 
   return (
     <div
-      className={`h-screen bg-home-mobile md:bg-home-tablet lg:bg-home-desktop ${bellefair.variable} ${barlow.variable} ${barlowCondensed.variable}`}
+      className={`h-screen bg-${page}-mobile md:bg-${page}-tablet lg:bg-${page}-desktop ${bellefair.variable} ${barlow.variable} ${barlowCondensed.variable}`}
     >
       <Navbar
         isMobile={isMobile}

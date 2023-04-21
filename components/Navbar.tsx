@@ -51,12 +51,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           {navItems.map((item, i) => (
             <Link href={item} key={i} legacyBehavior>
               <a
-                className={`nav-text uppercase text-white md:pb-8 lg:hover:border-b-4 lg:hover:border-gray-400 lg:hover:pb-7 ${
+                className={`nav-text uppercase text-white md:border-b-4 md:pb-8 lg:hover:border-gray-400 ${
                   router.pathname === "/" && item === "home"
-                    ? "md:border-b-4 md:pb-7"
-                    : ""
+                    ? ""
+                    : "md:border-transparent"
                 }
-                ${router.pathname === item ? "md:border-b-4" : ""}`}
+                ${router.pathname === item ? "" : ""}`}
               >
                 <span className="hidden font-bold lg:inline">0{i}</span> {item}
               </a>

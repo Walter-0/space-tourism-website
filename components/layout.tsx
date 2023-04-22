@@ -65,7 +65,7 @@ export default function Layout({ children }) {
 
   return (
     <div
-      className={`h-screen bg-${page}-mobile md:bg-${page}-tablet lg:bg-${page}-desktop ${bellefair.variable} ${barlow.variable} ${barlowCondensed.variable}`}
+      className={`min-h-screen bg-cover bg-${page}-mobile md:bg-${page}-tablet lg:bg-${page}-desktop ${bellefair.variable} ${barlow.variable} ${barlowCondensed.variable}`}
     >
       <Navbar
         isMobile={isMobile}

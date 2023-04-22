@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import iconClose from "../assets/shared/icon-close.svg";
 import Link from "next/link";
 
 interface MobileMenuProps {
@@ -12,7 +11,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ items, handleCloseMenu }) => {
   return (
     <div className="absolute inset-y-0 right-0 h-full w-64 bg-transparent p-6 backdrop-blur-lg">
       <Image
-        src={iconClose}
+        src="/shared/icon-close.svg"
         alt="icon-close"
         className="absolute right-6"
         width={19}

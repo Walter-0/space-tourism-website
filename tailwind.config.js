@@ -10,24 +10,24 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "home-mobile": "url('../assets/home/background-home-mobile.jpg')",
-        "home-tablet": "url('../assets/home/background-home-tablet.jpg')",
-        "home-desktop": "url('../assets/home/background-home-desktop.jpg')",
+        "home-mobile": "url('/home/background-home-mobile.jpg')",
+        "home-tablet": "url('/home/background-home-tablet.jpg')",
+        "home-desktop": "url('/home/background-home-desktop.jpg')",
         "destination-mobile":
-          "url('../assets/destination/background-destination-mobile.jpg')",
+          "url('/destination/background-destination-mobile.jpg')",
         "destination-tablet":
-          "url('../assets/destination/background-destination-tablet.jpg')",
+          "url('/destination/background-destination-tablet.jpg')",
         "destination-desktop":
-          "url('../assets/destination/background-destination-desktop.jpg')",
-        "crew-mobile": "url('../assets/crew/background-crew-mobile.jpg')",
-        "crew-tablet": "url('../assets/crew/background-crew-tablet.jpg')",
-        "crew-desktop": "url('../assets/crew/background-crew-desktop.jpg')",
+          "url('/destination/background-destination-desktop.jpg')",
+        "crew-mobile": "url('/crew/background-crew-mobile.jpg')",
+        "crew-tablet": "url('/crew/background-crew-tablet.jpg')",
+        "crew-desktop": "url('/crew/background-crew-desktop.jpg')",
         "technology-mobile":
-          "url('../assets/technology/background-technology-mobile.jpg')",
+          "url('/technology/background-technology-mobile.jpg')",
         "technology-tablet":
-          "url('../assets/technology/background-technology-tablet.jpg')",
+          "url('/technology/background-technology-tablet.jpg')",
         "technology-desktop":
-          "url('../assets/technology/background-technology-desktop.jpg')",
+          "url('/technology/background-technology-desktop.jpg')",
       },
       screens: {
         sm: "375px",
@@ -48,17 +48,17 @@ module.exports = {
   },
   safelist: [
     "bg-home-mobile",
-    "bg-home-tablet",
-    "bg-home-desktop",
+    "md:bg-home-tablet",
+    "lg:bg-home-desktop",
     "bg-destination-mobile",
-    "bg-destination-tablet",
-    "bg-destination-desktop",
+    "md:bg-destination-tablet",
+    "lg:bg-destination-desktop",
     "bg-crew-mobile",
-    "bg-crew-tablet",
-    "bg-crew-desktop",
+    "md:bg-crew-tablet",
+    "lg:bg-crew-desktop",
     "bg-technology-mobile",
-    "bg-technology-tablet",
-    "bg-technology-desktop",
+    "md:bg-technology-tablet",
+    "lg:bg-technology-desktop",
   ],
   plugins: [],
 };

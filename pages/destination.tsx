@@ -12,7 +12,7 @@ const Page: NextPageWithLayout = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <div className="nav-text text-center uppercase text-white md:pl-10 md:text-left md:text-[20px] md:tracking-[3.38px] lg:my-12 lg:pl-40 lg:text-[28px] lg:tracking-[4.72px]">
         <span className="font-bold opacity-50 lg:mr-4">01</span> Pick your
         destination

@@ -4,6 +4,10 @@ import { Navbar } from "./Navbar";
 import { useRouter } from "next/router";
 import useCheckScreenType from "@/hooks/useCheckScreenType";
 
+interface Props {
+  children: React.ReactNode;
+}
+
 const bellefair = Bellefair({
   weight: "400",
   subsets: ["latin"],
@@ -22,7 +26,7 @@ const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
 });
 
-export default function Layout({ children }) {
+export default function Layout({ children }: Props) {
   const router = useRouter();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const screenType = useCheckScreenType();

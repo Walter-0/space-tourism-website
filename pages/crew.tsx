@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, SetStateAction, useState } from "react";
 import Image from "next/image";
 import Layout from "../components/layout";
 import type { NextPageWithLayout } from "./_app";
@@ -7,7 +7,14 @@ import { default as data } from "../data.json";
 const Page: NextPageWithLayout = () => {
   const [currentCrew, setCurrentCrew] = useState(data.crew[0]);
 
-  const handleCrewChange = (crewMember) => {
+  const handleCrewChange = (
+    crewMember: SetStateAction<{
+      name: string;
+      images: { png: string; webp: string };
+      role: string;
+      bio: string;
+    }>
+  ) => {
     setCurrentCrew(crewMember);
   };
 

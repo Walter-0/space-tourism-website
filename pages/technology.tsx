@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, SetStateAction, useState } from "react";
 import Image from "next/image";
 import Layout from "../components/layout";
 import type { NextPageWithLayout } from "./_app";
@@ -11,7 +11,13 @@ const Page: NextPageWithLayout = () => {
     data.technology[0]
   );
 
-  const handleTechnologyChange = (technology) => {
+  const handleTechnologyChange = (
+    technology: SetStateAction<{
+      name: string;
+      images: { portrait: string; landscape: string };
+      description: string;
+    }>
+  ) => {
     setCurrentTechnology(technology);
   };
 

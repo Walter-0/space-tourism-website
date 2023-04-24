@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, SetStateAction, useState } from "react";
 import Image from "next/image";
 import type { NextPageWithLayout } from "./_app";
 import Layout from "../components/layout";
@@ -9,7 +9,15 @@ const Page: NextPageWithLayout = () => {
     data.destinations[0]
   );
 
-  const handleDestinationChange = (destination) => {
+  const handleDestinationChange = (
+    destination: SetStateAction<{
+      name: string;
+      images: { png: string; webp: string };
+      description: string;
+      distance: string;
+      travel: string;
+    }>
+  ) => {
     setCurrentDestination(destination);
   };
 

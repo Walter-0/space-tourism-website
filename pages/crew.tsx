@@ -27,7 +27,7 @@ const Page: NextPageWithLayout = () => {
         />
       </div>
 
-      <hr />
+      <hr className="mx-6 border-white opacity-30" />
 
       <div className="my-8 flex justify-center space-x-4">
         {crew.map((crewMember, i) => (

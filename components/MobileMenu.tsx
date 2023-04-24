@@ -21,7 +21,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ items, handleCloseMenu }) => {
 
       <div className="mt-28">
         {items.map((item, i) => (
-          <Link href={item} key={i} legacyBehavior>
+          <Link href={i === 0 ? "/" : item} key={i} legacyBehavior>
             <a className="nav-text mb-8 block uppercase text-white">
               <span className="font-bold">0{i}</span> {item}
             </a>

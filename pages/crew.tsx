@@ -1,8 +1,7 @@
 import { ReactElement, useState } from "react";
+import Image from "next/image";
 import Layout from "../components/layout";
 import type { NextPageWithLayout } from "./_app";
-import Link from "next/link";
-import Image from "next/image";
 import { default as data } from "../data.json";
 
 const Page: NextPageWithLayout = () => {
@@ -13,7 +12,7 @@ const Page: NextPageWithLayout = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <div className="nav-text text-center uppercase text-white md:pl-10 md:text-left md:text-[20px] md:tracking-[3.38px] lg:-mb-10 lg:mt-8 lg:pl-40 lg:text-[28px] lg:tracking-[4.72px]">
         <span className="font-bold opacity-50 lg:mr-4">02</span> Meet your crew
       </div>
@@ -30,12 +29,12 @@ const Page: NextPageWithLayout = () => {
 
         <hr className="mx-6 border-white opacity-30 md:hidden" />
 
-        <div className="lg:mb-24 lg:flex lg:w-[488px] lg:flex-col">
+        <div className="md:flex md:flex-col lg:mb-24 lg:w-[488px] lg:flex-col">
           <div className="my-8 flex justify-center space-x-4 md:order-2 lg:mb-0 lg:mt-32 lg:justify-start lg:space-x-8">
             {data.crew.map((crewMember, i) => (
               <div
                 key={i}
-                className={`h-[10px] w-[10px] cursor-pointer rounded-full bg-white lg:h-[15px] lg:w-[15px] ${
+                className={`h-[10px] w-[10px] cursor-pointer rounded-full bg-white hover:opacity-50 lg:h-[15px] lg:w-[15px] ${
                   currentCrew.name !== crewMember.name ? "opacity-20" : ""
                 }`}
                 onClick={() => handleCrewChange(crewMember)}

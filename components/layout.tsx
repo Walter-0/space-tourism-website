@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Bellefair, Barlow, Barlow_Condensed } from "next/font/google";
 import { Navbar } from "./Navbar";
 import { useRouter } from "next/router";
+import useCheckScreenType from "@/hooks/useCheckScreenType";
 
 const bellefair = Bellefair({
   weight: "400",
@@ -21,32 +22,10 @@ const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
 });
 
-const useCheckMobileScreen = () => {
-  const [width, setWidth] = useState(0);
-
-  const handleWindowSizeChange = () => {
-    setWidth(window.innerWidth);
-  };
-
-  const setInitialWidth = () => {
-    setWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    setInitialWidth();
-    window.addEventListener("resize", handleWindowSizeChange);
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, []);
-
-  return width < 768;
-};
-
 export default function Layout({ children }) {
   const router = useRouter();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const isMobile = useCheckMobileScreen();
+  const screenType = useCheckScreenType();
   const page = router.pathname === "/" ? "home" : router.pathname.slice(1);
 
   const handleOpenMenu = () => {
@@ -58,22 +37,24 @@ export default function Layout({ children }) {
   };
 
   useEffect(() => {
-    if (isMobile === false) {
+    if (screenType !== "mobile" && menuIsOpen) {
       setMenuIsOpen(() => false);
     }
-  }, [isMobile]);
+  }, [screenType, menuIsOpen]);
 
   return (
     <div
       className={`min-h-screen bg-cover bg-${page}-mobile md:bg-${page}-tablet lg:bg-${page}-desktop ${bellefair.variable} ${barlow.variable} ${barlowCondensed.variable}`}
     >
-      <Navbar
-        isMobile={isMobile}
-        menuIsOpen={menuIsOpen}
-        handleOpenMenu={handleOpenMenu}
-        handleCloseMenu={handleCloseMenu}
-      />
-      <main>{children}</main>
+      <div className="mx-auto max-w-screen-lg">
+        <Navbar
+          isMobile={screenType === "mobile"}
+          menuIsOpen={menuIsOpen}
+          handleOpenMenu={handleOpenMenu}
+          handleCloseMenu={handleCloseMenu}
+        />
+        <main>{children}</main>
+      </div>
     </div>
   );
 }

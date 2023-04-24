@@ -54,7 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <MobileMenu items={navItems} handleCloseMenu={handleCloseMenu} />
       )}
 
-      <hr className="hidden lg:z-10 lg:-mr-32 lg:block lg:w-[473px] lg:border-gray-500" />
+      <hr className="hidden lg:z-10 lg:-mr-32 lg:block lg:w-[473px] lg:border-white lg:border-opacity-25" />
 
       {!isMobile && (
         <div className="md:flex md:h-24 md:w-[450px] md:items-end md:justify-evenly md:bg-white md:bg-opacity-5 lg:w-[830px] lg:backdrop-blur-lg">

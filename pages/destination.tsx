@@ -2,10 +2,12 @@ import { ReactElement, useState } from "react";
 import Image from "next/image";
 import type { NextPageWithLayout } from "./_app";
 import Layout from "../components/layout";
-import { destinations } from "../data.json";
+import { default as data } from "../data.json";
 
 const Page: NextPageWithLayout = () => {
-  const [currentDestination, setCurrentDestination] = useState(destinations[0]);
+  const [currentDestination, setCurrentDestination] = useState(
+    data.destinations[0]
+  );
 
   const handleDestinationChange = (destination) => {
     setCurrentDestination(destination);
@@ -29,7 +31,7 @@ const Page: NextPageWithLayout = () => {
 
         <div className="lg:w-[450px]">
           <nav className="flex justify-center space-x-6 lg:justify-start lg:space-x-10">
-            {destinations.map((destination, i) => (
+            {data.destinations.map((destination, i) => (
               <a
                 key={i}
                 className={`nav-text cursor-pointer pb-2 uppercase text-light-blue ${

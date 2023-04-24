@@ -9,7 +9,7 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ items, handleCloseMenu }) => {
   return (
-    <div className="absolute inset-y-0 right-0 h-full w-64 bg-transparent p-6 backdrop-blur-lg">
+    <div className="absolute inset-y-0 right-0 z-10 h-full w-64 bg-transparent p-6 backdrop-blur-lg">
       <Image
         src="/shared/icon-close.svg"
         alt="icon-close"

@@ -26,6 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   useEffect(() => {
     setPage(router.pathname.slice(1) || "home");
+    handleCloseMenu();
   }, [router.pathname]);
 
   return (
